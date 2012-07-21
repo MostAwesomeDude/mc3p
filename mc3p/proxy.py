@@ -181,7 +181,6 @@ class MinecraftProxy(asyncore.dispatcher_with_send):
                         self.handle_close()
                         return
                     self.msg_spec, self.other_side.msg_spec = messages.protocol[proto_version]
-                forward = True
                 if self.plugin_mgr:
                     forwarding = self.plugin_mgr.filter(packet, self.side)
                     if forwarding and packet.modified:
