@@ -269,7 +269,7 @@ def emit_slot_update2(update):
         s = ''.join(s, emit_short(size))
         if size >= 0:
             data = update['nbt_data']
-        s = ''.join([s, nbtdata])
+            s += data
     return s
 
 MC_slot_update2 = Parsem(parse_slot_update2, emit_slot_update2)
